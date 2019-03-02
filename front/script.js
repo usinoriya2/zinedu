@@ -52,13 +52,17 @@ function handleChangeMetaData(event) {
 }
       quizQuestions.push(question1);
     }
+    populateNavButtons(quizMetaData.numberOfQuestions, "handleSwitchQuestion");
+  }
+}
+
+function populateNavButtons(numberOfQuestions,handler){
     var questionNavButtons="";
-    for (var i = 1; i <= quizMetaData.numberOfQuestions; i++) {
-      questionNavButtons = questionNavButtons + "<button class='btn' type='button' onclick=" + "'handleSwitchQuestion("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
+    for (var i = 1; i <= numberOfQuestions; i++) {
+      questionNavButtons = questionNavButtons + "<button class='btn' type='button' onclick=" + "'" + handler + " ("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
     }
     questionNavButtons = "Questions: " + questionNavButtons;
     document.getElementById('questionNav').innerHTML = questionNavButtons;
-  }
 }
 
 function handleChangeQuestionField(event) {

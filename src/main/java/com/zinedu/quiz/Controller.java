@@ -1,9 +1,6 @@
 package com.zinedu.quiz;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
@@ -119,6 +116,7 @@ public class Controller {
         String s = "";
         Quiz quiz_data = new Quiz();
         Question questionData=new Question();
+        ArrayList<Question>questionDataList=new ArrayList<>();
         try {
             //Class.forName("com.mysql.jdbc.Driver")
             Connection con = connector();
@@ -129,30 +127,30 @@ public class Controller {
             while (rs.next()) {
                 quiz_data.quiz_id = rs.getInt(1);
                 quiz_data.quiz_time = rs.getFloat(2);
-                quiz_data.question_IDs = rs.getString(3);
+
             }
-            String s1=quiz_data.question_IDs;
-            String arr[]=(s1.split(","));
-            ArrayList<Integer>QIDs=new ArrayList<>();
-            for(int i=0;i<arr.length;i++){
-                int temp=Integer.parseInt(arr[i]);
-                QIDs.add(temp);
-                // System.out.println(QIDs.get(i));
+            ResultSet quizScheduleResult = stmt.executeQuery("select * from quiz_schedule where quiz_schedule_id=" + quiz_data.quiz_id);
+            QuizSchedule quizSchedule = new QuizSchedule();
+            while (quizScheduleResult.next()) {
+                quizSchedule.quiz_schedule_id = quizScheduleResult.getInt(1);
             }
-            ArrayList<Question>Question_data=new ArrayList<>();
-            for(int i=0;i<QIDs.size();i++){
-                questionData =fetchQuestionData(QIDs.get(i),con);
-                Question_data.add(questionData);
+            quiz_data.quiz_schedule = quizSchedule;
+            Statement get_questions_statement = con.createStatement();
+            ResultSet questionListResult = get_questions_statement.executeQuery("select question_id from quiz_question where quiz_id=" + j );
+            while (questionListResult.next() ) {
+                questionData = fetchQuestionData(questionListResult.getInt(1),con);
+                questionDataList.add(questionData);
                 System.out.println(questionData.question_data);
             }
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        quiz_data.questions = questionDataList;
+        String json = new Gson().toJson(quiz_data);
 
-
-        s = s + Integer.toString(quiz_data.quiz_id) + " " + Float.toString(quiz_data.quiz_time) + " " + quiz_data.question_IDs;
-        return s;
+        //s = s + Integer.toString(quiz_data.quiz_id) + " " + Float.toString(quiz_data.quiz_time) + " " + quiz_data.question_IDs;
+        return json;
     }
     public Question fetchQuestionData(/*@RequestParam("QuestionID")*/int k,Connection con){
         //String s = "";

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +11,10 @@
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./script.js"></script>
+	<script src="./quiz.js"></script>
+
+
 <script>
 
 
@@ -24,7 +27,7 @@
 
 </script>
 </head>
-<body>
+<body onload="getData()">
 
 	<div class="wrapper">
 		<div class="container">
@@ -44,25 +47,27 @@
 								<h2>QUIZ</h2>
 							</div>
 							<div class="module-body">
-
-								<div class="control-group">
-											<label class="control-label">erxdtcfygvuomkpibuytcrexrtcyubiompiyrd5ercyubiomcres4was4eryuiomuygtfd54s3</label>
+								<div class="controls" id="questionNav">
+												
+								</div>
+								<div id="question_content" class="control-group">
+											<label id="question_data" class="control-label"></label>
 											<div class="controls">
 												<label class="radio">
 													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" >
-													A
+													<span><b>A.    </b></span><span id="optA"></span>
 												</label> 
 												<label class="radio">
 													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option2" value="B">
-													B
+													<span><b>B.    </b></span><span id="optB"></span>
 												</label> 
 												<label class="radio">
 													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="C">
-													C
+													<span><b>C.    </b></span><span id="optC"></span>
 												</label>
 												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="D">
-													D
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option4" value="D">
+													<span><b>D.    </b></span><span id="optD"></span>
 												</label>
 											</div>
 										</div>
