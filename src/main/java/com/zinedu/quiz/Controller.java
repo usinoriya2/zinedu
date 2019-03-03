@@ -3,6 +3,9 @@ package com.zinedu.quiz;
 import com.google.gson.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -37,7 +40,6 @@ public class Controller {
 //        return "";
 //    }
 
-    class abc{ String def, g;}
     @RequestMapping(value = "/az" , method = RequestMethod.POST)
     public String getData(@RequestBody String string_data) throws Exception{
         String decoded = "";
@@ -49,12 +51,12 @@ public class Controller {
         }
         System.out.println(string_data);
         System.out.println(decoded);
-        JsonElement jsonElement = new JsonParser().parse(decoded);
+        JsonElement jsonElement = new JsonParser().parse(decoded.substring(0,decoded.length()-1));
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         System.out.println(jsonObject);
         JsonArray quizQuestions = jsonObject.getAsJsonArray("quizQuestions");
         Vector<Question> questions = new Vector<>();
-        for(JsonElement quizQuestionElement : quizQuestions){
+        for(JsonElement quizQuestionElement : quizQuestions) {
             JsonObject quizQuestion = quizQuestionElement.getAsJsonObject();
             Question question = new Question();
             question.question_data = quizQuestion.getAsJsonPrimitive("questionData").getAsString();
@@ -71,9 +73,71 @@ public class Controller {
             questions.add(question);
             insertQuestionData(question);
         }
-
-        //System.out.println(string_data);
         return string_data;
+    }
+    @RequestMapping(value = "/submitQuiz" , method = RequestMethod.POST)
+    public String submitQuiz(@RequestBody String string_data) throws Exception{
+        String decoded = "";
+
+        try {
+            decoded = java.net.URLDecoder.decode(string_data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(decoded);
+        System.out.println(string_data);
+        System.out.println(decoded);
+        JsonElement jsonElement = new JsonParser().parse(decoded.substring(0,decoded.length()-1));
+        JsonObject jsonObject = jsonElement.getAsJsonObject();
+        //JsonArray quizResponseArray = jsonObject.getAsJsonArray("quizResponse");
+        System.out.println(jsonObject);
+        insertResult(jsonObject.get("attempted_answers").getAsJsonObject(),jsonObject.get("quiz_id").getAsString());
+        return string_data;
+    }
+
+    @RequestMapping(value = "/getCsv", method = RequestMethod.GET, produces = "text/plain; charset=utf-8")
+    public String generateCSV(){
+        int quiz_id = 1;
+        try {
+            Connection con = connector();
+            Statement statement = con.createStatement();
+            String query = "select q.quiz_id,question_data,attempted_option,correct_ans, question_marks\n" +
+            "from quiz q join quiz_question qq on q.quiz_id=qq.quiz_id\n" +
+            "join question ques on ques.question_id=qq.question_id\n"+
+            "join result on qq.question_id=result.question_id\n"+
+            "where q.quiz_id="+ quiz_id+"\n"+
+            "into outfile 'C:\\\\ProgramData\\\\MySQL\\\\MySQL Server 8.0\\\\Uploads\\\\" + "result.csv" + "'\n"+
+            "FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'\n"+
+            "LINES TERMINATED BY '\n'--";
+
+            statement.executeQuery(query);
+            byte[] encoded = Files.readAllBytes( Paths.get("C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\result.csv"));
+            File file = new File("C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\result.csv");
+            file.delete();
+            return new String(encoded);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+
+    }
+
+    public void insertResult(JsonObject quizResponse,String quiz_id){
+        try{
+            Connection con = connector();
+            Statement statement = con.createStatement();
+            for(String quesIdStr : quizResponse.keySet()) {
+                String attempted_option = quizResponse.get(quesIdStr).getAsString();
+
+                String sqlQuery = "insert into result (quiz_id,question_id,attempted_option) VALUES ("+ quiz_id+ "," + quesIdStr+ ",\""+attempted_option+"\")" ;
+                System.out.println(sqlQuery);
+                int result = statement.executeUpdate(sqlQuery);
+            }
+            con.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
     public void insertQuestionData(Question obj){
         int qus_marks= 0;
@@ -84,8 +148,10 @@ public class Controller {
         try{
             Connection con = connector();
             Statement statement = con.createStatement();
-            String sqlQuery = "insert into question (question_data,data_media,optA,optA_media,optB,optB_media,optC,optC_media,optD,optD_media,question_marks,correct_ans) values ("+
-                    "\""+obj.getQuestion_data()+"\",'',\""+obj.getOptA()+"\",'',\""+obj.getOptB()+"\",'',\""+obj.getOptC()+"\",'',\""+obj.getOptD()+"\",'',\""+qus_marks+"\",\""+obj.getCorrect_ans() + "\")";
+            String sqlQuery = "insert into question (question_data,data_media,optA,optA_media,optB,optB_media,optC,optC_media," +
+                    "optD,optD_media,question_marks,correct_ans) values ("+ "\""+obj.getQuestion_data()+"\",'',\""+obj.getOptA()
+                    +"\",'',\""+obj.getOptB()+"\",'',\""+obj.getOptC()+"\",'',\""+obj.getOptD()+"\",'',\""+qus_marks+"\",\""+
+                    obj.getCorrect_ans() + "\")";
             System.out.println(sqlQuery);
             int result = statement.executeUpdate(sqlQuery);
             con.close();

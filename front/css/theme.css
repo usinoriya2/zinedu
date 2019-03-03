@@ -6,6 +6,24 @@ All Rights Reserved.
 
 */
 
+.read {
+	background-color: tomato;
+}
+
+.attempted{
+	background-color: green;
+}
+
+.markedForReview{
+	background-color: violet;
+}
+
+.btn.selectedQuestion {
+	font-weight: bold;
+	background-color: #ccc;
+	/*border: 1px solid black;*/
+}
+
 body {
 	font-size: 13px;
 	font-family: 'Open Sans', Arial, sans-serif;
@@ -452,7 +470,7 @@ transition: all .2s ease-in-out;
 	outline-offset: -2px
 }
 .btn:focus, .btn:hover {
-	color: #767676;
+	/*color: #767676;*/
 	text-decoration: none
 }
 .btn.active, .btn:active {
@@ -476,7 +494,7 @@ transition: all .2s ease-in-out;
 }
 .btn-default.active, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.btn-default.dropdown-toggle {
 	color: #767676;
-	background-color: #e1e1e1;
+	/*background-color: #e1e1e1;*/
 	border-color: #cfcfcf
 }
 .btn-default.active, .btn-default:active, .open>.btn-default.dropdown-toggle {

@@ -13,77 +13,45 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./script.js"></script>
 	<script src="./quiz.js"></script>
-
-
-<script>
-
-
-  	for(var i =1; i<= 10; i++){
-  $('#target').append($('<div/>', { id: 'r' + i, 'class' : 'ansbox'}))
-}
-
-
-
-
-</script>
 </head>
 <body onload="getData()">
+	<div>
+		<div class="module-head">
+			<h2>QUIZ</h2>
+		</div>
+		<div class="module-body" style="height: 100%; display: flex; flex-direction: column;">
+			<div class="controls" id="questionNav">
 
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="span3">
-					<div class="sidebar">
-
-   					</div>
-				</div> 
-
-
-				<div class="span9">
-					<div class="content">
-
-						<div class="module">
-							<div class="module-head">
-								<h2>QUIZ</h2>
-							</div>
-							<div class="module-body">
-								<div class="controls" id="questionNav">
-												
-								</div>
-								<div id="question_content" class="control-group">
-											<label id="question_data" class="control-label"></label>
-											<div class="controls">
-												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" >
-													<span><b>A.    </b></span><span id="optA"></span>
-												</label> 
-												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option2" value="B">
-													<span><b>B.    </b></span><span id="optB"></span>
-												</label> 
-												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="C">
-													<span><b>C.    </b></span><span id="optC"></span>
-												</label>
-												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option4" value="D">
-													<span><b>D.    </b></span><span id="optD"></span>
-												</label>
-											</div>
-										</div>
-
-
-									
-							</div>
-						</div>
-
-						
-						
-					</div><!--/.content-->
-				</div><!--/.span9-->
 			</div>
-		</div><!--/.container-->
-	</div><!--/.wrapper-->
+			<div id="question_content" class="control-group">
+				<label id="question_data" class="control-label"></label>
+				<div class="controls">
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option1" value="A" >
+						<span><b>A.    </b></span><span id="optA"></span>
+					</label> 
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option2" value="B">
+						<span><b>B.    </b></span><span id="optB"></span>
+					</label> 
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option3" value="C">
+						<span><b>C.    </b></span><span id="optC"></span>
+					</label>
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option4" value="D">
+						<span><b>D.    </b></span><span id="optD"></span>
+					</label>
+				</div>
 
-	</body>
-	</html>
+			</div>	
+			<div style="display: flex; margin-top: 'auto'">
+				<button onclick="handlePrevious(event)"id="prevButton"class='btn'>Previous Question</button>
+				<button class='btn' id='markForReview' onclick="handleMarkForReview(event)">Mark for Review</button>
+				<button class='btn' id='clearResponse'onclick="handleClearResponse(event)">Clear Response</button>
+				<button style="margin-left: auto " onclick="handleNextAndSubmit(event)"id="nextandsubmit"class='btn'>Next Question</button>
+			</div>
+		</div>			
+	</div>	
+</body>
+</html>

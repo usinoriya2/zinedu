@@ -59,7 +59,7 @@ function handleChangeMetaData(event) {
 function populateNavButtons(numberOfQuestions,handler){
     var questionNavButtons="";
     for (var i = 1; i <= numberOfQuestions; i++) {
-      questionNavButtons = questionNavButtons + "<button class='btn' type='button' onclick=" + "'" + handler + " ("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
+      questionNavButtons = questionNavButtons + "<button class='btn' id='quesButton" + i + "' type='button' onclick=" + "'" + handler + " ("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
     }
     questionNavButtons = "Questions: " + questionNavButtons;
     document.getElementById('questionNav').innerHTML = questionNavButtons;
@@ -71,7 +71,10 @@ function handleChangeQuestionField(event) {
   if(element.type == "textarea") quizQuestions[currentQuestion][event.target.name] = event.target.value;
   if(element.type == "number") quizQuestions[currentQuestion][event.target.name] = event.target.value;
   if(element.type == "file") quizQuestions[currentQuestion][event.target.name] = event.target.value;
-  if(element.type == "radio") quizQuestions[currentQuestion][event.target.name] = event.target.value;
+  if(element.type == "radio") {
+      quizQuestions[currentQuestion][event.target.name] = event.target.value;
+
+  } 
   // whatever changes you make add it in quizQuestions[i]
 }
 function loadQuestion(quesId){
@@ -80,16 +83,18 @@ function loadQuestion(quesId){
     if(elements[i].type == "textarea" ) elements[i].value=quizQuestions[quesId][elements[i].name] || "";
     if(elements[i].type == "radio" ){
       elements[i].checked = false;
-      if(quizQuestions[quesId][elements[i].name]) quizQuestions[quesId][elements[i].name].checked=true;
+      if(elements[i].value == quizQuestions[quesId][elements[i].name]) elements[i].checked=true;
     }
 
   }
 }
 
 function handleSwitchQuestion(i){
+  addClassToQuestion(currentQuestion,"selectedQuestion",true);
   loadQuestion(i);
   console.log(i)
   currentQuestion = i;
+  addClassToQuestion(i,"selectedQuestion");
   // return false;
   
 }
@@ -105,78 +110,12 @@ function handleSwitchQuestion(i){
   function my_function(data){
     console.log(data);
   }
-// $(document).ready(function(){
-//   $("#submitForm").click(function(){
-//   	var string_data;
-//   	var class_no = $.trim($("input[name='cls']:checked").val());
-//   	var numberOfQus = $.trim($("#numberOfQus").val());
-//     var quiz_time = $.trim($("#quiz_time").val());
-//     var start_date = $.trim($("#start_date").val());
-//     var start_time = $.trim($("#start_time").val());
-//     var end_date = $.trim($("#end_date").val());
-//     var end_time = $.trim($("#end_time").val());
-
-//     var data={	class_no : class_no,
-//       numberOfQus : numberOfQus,
-//       quiz_time : quiz_time,
-//       start_date : start_date,
-//       start_time : start_time,
-//       end_date : end_date,
-//       end_time : end_time
-
-//     }
-//     string_data=JSON.stringify(data);
-//     console.log(string_data);
-//     $.post("http://localhost:8080/az",string_data).done(my_function);
-
-//   });
-
-//   $("form").submit(function(event) {
-//    event.preventDefault();
-//  });
-
-  
-
-
-// });
-// $(document).ready(function(){
-//   $("#submitForm").click(function(){
-//     var string_data;
-//     var question_data = $.trim($("#question_data").val());
-//     var optA_data = $.trim($("#optA_data").val());
-//     var optB_data = $.trim($("#optB_data").val());
-//     var optC_data = $.trim($("#optC_data").val());
-//     var optD_data = $.trim($("#optD_data").val());
-//     var question_marks = $.trim($("#question_marks").val());
-//     var correct_ans = $.trim($("input[name='c_ans']:checked").val());
-//     var data={
-//       question_data : question_data,
-//       optA_data : optA_data,
-//       optB_data : optB_data,
-//       optC_data : optC_data,
-//       optD_data : optD_data,
-//       question_marks : question_marks,
-//       correct_ans : correct_ans
-
-//     }
-//     string_data=JSON.stringify(data);
-//     console.log(string_data);
-//     $.post("http://localhost:8080/ax",string_data).done(my_function);
-//     var allData=[data, data, data, data, data];
-//     console.log(allData);
-
-//   });
-//   function my_function(data){
-//     console.log("running");
-//     console.log(data);
-//   }
-
-//   $("form").submit(function(event) {
-//     event.preventDefault();
-//   });
-
-// });
-
+addClassToQuestion = function(quesId, className, shouldRemove){  
+  var elements = document.getElementById("quesButton" + (quesId + 1));
+  console.log(elements);
+  if(shouldRemove) elements.classList.remove(className);
+  else elements.classList.add(className);
+}
 
 
 
