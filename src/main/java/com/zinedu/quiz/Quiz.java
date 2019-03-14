@@ -1,12 +1,16 @@
 package com.zinedu.quiz;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class Quiz {
     int quiz_id;
+    int class_id;
+    String valid_till;
     QuizSchedule quiz_schedule;
-    ArrayList<Question> questions;
     float quiz_time;
-    String question_IDs;
+    String quiz_name;
+    int quiz_schedule_id;
+    String quiz_description;
+    List<Question> questions;
 
 }

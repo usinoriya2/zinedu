@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,18 +13,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./script.js"></script>
 	<script src="./quiz.js"></script>
+	<script src="./displayQuiz.js"></script>
 </head>
-<body onload="getData()">
-	<div>
-		<div class="module-head">
-			<h2>QUIZ</h2>
+<body onload="callGetData()" style="height: 100%">
+	<div style="height: 100%; display: flex; flex-direction: column">
+		<div class="module-head" style="background-color: #075094; padding-left: 70px;">
+			<h1 style="color: #FFFFFF; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif";">QUIZ</h1>
 		</div>
-		<div class="module-body" style="height: 100%; display: flex; flex-direction: column;">
+
+		<div class="module-body" style="display: flex; flex-direction: column; flex-grow: 1; padding: 50px">
 			<div class="controls" id="questionNav">
 
 			</div>
+			<div  style="margin-left: auto "class="control-group"><b>Time Remaining : </b><span id="time"></span> </div>
 			<div id="question_content" class="control-group">
-				<label id="question_data" class="control-label"></label>
+				<h4 id="question_data" class="control-label"></h4>
 				<div class="controls">
 					<label class="radio">
 						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option1" value="A" >
@@ -45,7 +48,7 @@
 				</div>
 
 			</div>	
-			<div style="display: flex; margin-top: 'auto'">
+			<div style="display: flex; align-items: flex-end; margin-top: auto">
 				<button onclick="handlePrevious(event)"id="prevButton"class='btn'>Previous Question</button>
 				<button class='btn' id='markForReview' onclick="handleMarkForReview(event)">Mark for Review</button>
 				<button class='btn' id='clearResponse'onclick="handleClearResponse(event)">Clear Response</button>

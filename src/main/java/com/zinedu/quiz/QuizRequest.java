@@ -8,8 +8,11 @@ public class QuizRequest {
     private String start_time;
     private String end_date;
     private String end_time;
+    private String quiz_name;
+    private String quiz_description;
+
     public QuizRequest(String class_no, String numOfQus, String quiz_time, String start_date, String start_time,
-                       String end_date, String end_time) {
+                       String end_date, String end_time, String quiz_name, String quiz_description) {
         this.class_no = class_no;
         this.numOfQus = numOfQus;
         this.quiz_time = quiz_time;
@@ -17,8 +20,30 @@ public class QuizRequest {
         this.start_time = start_time;
         this.end_date = end_date;
         this.end_time = end_time;
-
+        this.quiz_name = quiz_name;
+        this.quiz_description = quiz_description;
     }
+
+    public void setClass_no(String class_no) {
+        this.class_no = class_no;
+    }
+
+    public String getQuiz_name() {
+        return quiz_name;
+    }
+
+    public void setQuiz_name(String quiz_name) {
+        this.quiz_name = quiz_name;
+    }
+
+    public String getQuiz_description() {
+        return quiz_description;
+    }
+
+    public void setQuiz_description(String quiz_description) {
+        this.quiz_description = quiz_description;
+    }
+
     public String getNumOfQus() {
         return numOfQus;
     }

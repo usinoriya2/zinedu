@@ -3,16 +3,63 @@ res = {};
 currentQuestion = 0;
 lastQuestion= 0;
 var responseArray = {};
-function getData(){
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds,
+        interval_id;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+
+        if (diff <= 0) {
+        	clearInterval(interval_id);
+            handleSubmit(null);
+
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    interval_id = setInterval(timer, 1000);
+}
+function quizTimer(i) {
+	console.log("FF");
+    var fiveMinutes = 60 * i,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+function callGetData(){
+	var x = localStorage.getItem("quiz_id");
+	console.log(x);
+	getData(x);
+}
+function getData(i){
+	console.log(i);
 	console.log("load");
 	$.ajax({
 		url: "http://localhost:8080/fetchQuizData",
 	  type: "get", //send it through get method
 	  data: {
-	  	QuizID: 1, 
+	  	//QuizID: res["questions"][quiz_id]
+		QuizID: i
 	  },
 	  success: function(response) {
 	  	loadQuiz(JSON.parse(response));
+	  	var quizTime =res["quiz_time"];
+		console.log("quizTime=" + quizTime);
+		quizTimer(quizTime*60);
+
 	  },
 	  error: function(xhr) {
 	  	console.log(xhr);
@@ -43,7 +90,7 @@ handleSwitchQuestionUser = function(quesId){
 	var optionB = document.getElementById('optB');
 	var optionC = document.getElementById('optC');
 	var optionD = document.getElementById('optD');
-	question_element.innerHTML = res["questions"][quesId]["question_data"];
+	question_element.innerHTML = "Question "+ (quesId+1) + "<br></br>" + res["questions"][quesId]["question_data"];
 	optionA.innerHTML = res["questions"][quesId]["optA"];
 	optionB.innerHTML = res["questions"][quesId]["optB"];
 	optionC.innerHTML = res["questions"][quesId]["optC"];
@@ -91,7 +138,7 @@ handlePrevious = function(event){
 handleNextAndSubmit = function(event){
 	lastQuestion = res["questions"].length -1;
 	if(currentQuestion==lastQuestion)
-		handleSubmit();
+		handleSubmit(event);
 	else
 		handleSwitchQuestionUser(currentQuestion+1);
 }
@@ -128,10 +175,15 @@ handleMarkForReview = function(event) {
 }}
 
 
-handleSubmit =function(){
-	event.preventDefault();
+handleSubmit =function(event){
+	if(event) event.preventDefault();
+	window.location = 'SubmitQuizDisplay.html';
     //quizDetails = {"quizQuestions": quizQuestions, "quizMetaData": quizMetaData};
     var quizIdObject = {
+    	"student_name":localStorage.getItem("student_name"),
+    	"class":localStorage.getItem("class"),
+    	"school_name":localStorage.getItem("school_name"),
+    	"roll_no":localStorage.getItem("roll_no"),
 		"quiz_id": res["quiz_id"]
 	};
     quizIdObject["attempted_answers"] = responseArray;

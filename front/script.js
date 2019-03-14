@@ -1,12 +1,12 @@
 
 var quizMetaData = {
+  quiz_name: '',
   class: '',
+  quiz_description :'',
   numberOfQuestions: '',
   quizTime: '',
   startTime: '',
-  startDate: '',
   endTime: '',
-  endDate: ''
 }
 var question={
   questionData : '',
@@ -56,12 +56,37 @@ function handleChangeMetaData(event) {
   }
 }
 
+function callNavButtons(quizData){
+  quizMetaData=quizData;
+  console.log(quizMetaData);
+  for(var i=0;i<quizMetaData.numberOfQuestions; i++){
+    var question1={
+  questionData : '',
+  addMedia : '',
+  optA_data : '',
+  optA_media : '',
+  optB_data : '',
+  optB_media : '',
+  optC_data : '',
+  optC_media : '',
+  optD_data : '',
+  optD_media : '',
+  questionMarks: '',
+  correctAns: ''
+}
+      quizQuestions.push(question1);
+  }
+  populateNavButtons(quizMetaData.numberOfQuestions, "handleSwitchQuestion");
+
+}
 function populateNavButtons(numberOfQuestions,handler){
     var questionNavButtons="";
     for (var i = 1; i <= numberOfQuestions; i++) {
-      questionNavButtons = questionNavButtons + "<button class='btn' id='quesButton" + i + "' type='button' onclick=" + "'" + handler + " ("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
+      questionNavButtons = questionNavButtons + "<button style='margin-right: 15px;' class='btn' id='quesButton" + i + "' type='button' onclick=" + "'" + handler + " ("+ (i - 1) + ")'" + ">"+ i +"</button>"; 
     }
-    questionNavButtons = "Questions: " + questionNavButtons;
+    questionNavButtons = questionNavButtons;
+    if(document.getElementById('questionsLabel')!=null){
+    document.getElementById('questionsLabel').innerHTML = "Questions";}
     document.getElementById('questionNav').innerHTML = questionNavButtons;
 }
 
@@ -103,6 +128,7 @@ function handleSwitchQuestion(i){
   function serverRequest(event) {
     event.preventDefault();
     quizDetails = {"quizQuestions": quizQuestions, "quizMetaData": quizMetaData};
+    console.log(quizDetails);
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
     $.post("http://localhost:8080/az",string_data).done(my_function);

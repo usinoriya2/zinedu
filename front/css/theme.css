@@ -7,15 +7,18 @@ All Rights Reserved.
 */
 
 .read {
-	background-color: tomato;
+	background-color: #DB4437;
+	color: white;
 }
 
 .attempted{
-	background-color: green;
+	background-color: #0F9D58;
+	color: white;
 }
 
 .markedForReview{
-	background-color: violet;
+	background-color: #F4B400;
+	color: white;
 }
 
 .btn.selectedQuestion {

@@ -39,6 +39,12 @@
 
 									<form  method="POST" class="form-horizontal row-fluid">
 										<div class="control-group">
+											<label class="control-label" for="basicinput" >Quiz Name</label>
+											<div class="controls">
+												<textarea  onchange="handleChangeMetaData(event)"  name="quiz_name" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
 											<label class="control-label">Class</label>
 											<div class="controls">
 												<label class="radio">
@@ -54,16 +60,23 @@
 													11th
 												</label>
 												<label class="radio">
-													<input type="radio" name="class" id="options3" value="12" onchange="handleChangeMetaData(event)">
+													<input type="radio" name="class" id="options3" value="12" >
 													12th
 												</label>
 											</div>
-										</div>										<div class="control-group">
+										</div>								
+										<div class="control-group">
 											<label class="control-label" for="basicinput">Number of Questions</label>
 											<div class="controls">
 												<div class="input-append">
 													<input id="numberOfQus" type="number" placeholder="0" class="span6" name="numberOfQuestions" onchange="handleChangeMetaData(event)"/>
 												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Quiz Description</label>
+											<div class="controls">
+												<textarea name="quiz_description"  onchange="handleChangeMetaData(event)" id="question_data" class="span12" rows="5"></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -77,15 +90,13 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Start date and time</label>
 											<div class="controls">
-												<input id="start_date" name="startDate" type="date" onchange="handleChangeMetaData(event)">
-												<input id="start_time" name="startTime"type="time" onchange="handleChangeMetaData(event)">
+												<input id="start_time" name="startTime"type="datetime-local" onchange="handleChangeMetaData(event)">
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">End date and time</label>
 											<div class="controls">
-												<input id="end_date" name="endDate" type="date" onchange="handleChangeMetaData(event)">
-												<input id="end_time" name="endTime" type="time" onchange="handleChangeMetaData(event)">
+												<input id="end_time" name="endTime" type="datetime-local" onchange="handleChangeMetaData(event)">
 											</div>
 										</div>
 										<div class="control-group">
@@ -187,7 +198,7 @@
 										
 								<div class="control-group">
 											<div class="controls">
-												<button onclick="serverRequest(event)" type="submit" id="submitForm" class="btn">Submit Question</button>
+												<button onclick="serverRequest(event)" type="submit" id="submitForm" class="btn">Submit Quiz</button>
 											</div>
 										</div>	
 										
