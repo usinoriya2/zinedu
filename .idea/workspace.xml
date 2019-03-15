@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0c4bd3-3b48-4eca-aae9-bbf0dcecc149" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/ResultList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/AddQuestions.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/AddQuestions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/CreateQuiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/CreateQuiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/Quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Sample.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/front/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/QuizRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/QuizRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/QuizSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zinedu/quiz/QuizSchedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/Quiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/QuizRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/QuizRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/QuizSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zinedu/quiz/QuizSchedule.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -310,7 +291,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552606581358" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552640657392" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -377,17 +358,17 @@
       <workItem from="1552160346129" duration="7317000" />
       <workItem from="1552208622081" duration="8950000" />
       <workItem from="1552595427204" duration="920000" />
-      <workItem from="1552603622090" duration="1207000" />
+      <workItem from="1552603622090" duration="4202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207247000" />
+    <option name="totallyTimeSpent" value="210242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.19090909" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.19090909" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -397,7 +378,7 @@
       <window_info id="Web" order="7" sideWeight="0.50153846" side_tool="true" weight="0.25378788" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29228243" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.29228243" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2923077" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -405,10 +386,10 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007576" side_tool="true" weight="0.29228243" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3262295" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32512316" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.24466339" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

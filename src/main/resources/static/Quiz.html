@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DASHBOARD</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./script.js"></script>
+	<script src="./quiz.js"></script>
+	<script src="./displayQuiz.js"></script>
+</head>
+<body onload="callGetData()" style="height: 100%">
+	<div style="height: 100%; display: flex; flex-direction: column">
+		<div class="module-head" style="background-color: #075094; padding-left: 70px;">
+			<h1 style="color: #FFFFFF; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif";">QUIZ</h1>
+		</div>
+
+		<div class="module-body" style="display: flex; flex-direction: column; flex-grow: 1; padding: 50px">
+			<div class="controls" id="questionNav">
+
+			</div>
+			<div  style="margin-left: auto "class="control-group"><b>Time Remaining : </b><span id="time"></span> </div>
+			<div id="question_content" class="control-group">
+				<h4 id="question_data" class="control-label"></h4>
+				<div class="controls">
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option1" value="A" >
+						<span><b>A.    </b></span><span id="optA"></span>
+					</label> 
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option2" value="B">
+						<span><b>B.    </b></span><span id="optB"></span>
+					</label> 
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option3" value="C">
+						<span><b>C.    </b></span><span id="optC"></span>
+					</label>
+					<label class="radio">
+						<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionFieldOnQuiz(event)" id="option4" value="D">
+						<span><b>D.    </b></span><span id="optD"></span>
+					</label>
+				</div>
+
+			</div>	
+			<div style="display: flex; align-items: flex-end; margin-top: auto">
+				<button onclick="handlePrevious(event)"id="prevButton"class='btn'>Previous Question</button>
+				<button class='btn' id='markForReview' onclick="handleMarkForReview(event)">Mark for Review</button>
+				<button class='btn' id='clearResponse'onclick="handleClearResponse(event)">Clear Response</button>
+				<button style="margin-left: auto " onclick="handleNextAndSubmit(event)"id="nextandsubmit"class='btn'>Next Question</button>
+			</div>
+		</div>			
+	</div>	
+</body>
+</html>

@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DASHBOARD</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./script.js" type="text/js"></script>
+</head>
+<body>
+	<button id='btnAddProfile'>Send an HTTP POST request to a page and get the result back</button>
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+
+			 	</div><!--/.sidebar-->
+				</div><!--/.span3--> 
+
+
+				<div class="span9">
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h2>Create Quiz</h2>
+							</div>
+							<div class="module-body">
+
+								
+
+									<form  method="POST" class="form-horizontal row-fluid">
+										<div class="control-group">
+											<label class="control-label" for="basicinput" >Quiz Name</label>
+											<div class="controls">
+												<textarea  onchange="handleChangeMetaData(event)"  name="quiz_name" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label">Class</label>
+											<div class="controls">
+												<label class="radio">
+													<input type="radio" name="class" id="options1" value="9" onchange="handleChangeMetaData(event)">
+													9th
+												</label> 
+												<label class="radio">
+													<input type="radio" name="class" id="option2" value="10" onchange="handleChangeMetaData(event)">
+													10th
+												</label> 
+												<label class="radio">
+													<input type="radio" name="class" id="option3" value="11" onchange="handleChangeMetaData(event)">
+													11th
+												</label>
+												<label class="radio">
+													<input type="radio" name="class" id="options3" value="12" >
+													12th
+												</label>
+											</div>
+										</div>								
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Number of Questions</label>
+											<div class="controls">
+												<div class="input-append">
+													<input id="numberOfQus" type="number" placeholder="0" class="span6" name="numberOfQuestions" onchange="handleChangeMetaData(event)"/>
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Quiz Description</label>
+											<div class="controls">
+												<textarea name="quiz_description"  onchange="handleChangeMetaData(event)" id="question_data" class="span12" rows="5"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Quiz Time</label>
+											<div class="controls">
+												<div class="input-append">
+													<input id="quiz_time" name="quizTime"  type="number" placeholder="0.0" onchange="handleChangeMetaData(event)" class="span8"><span class="add-on">in hrs</span>
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Start date and time</label>
+											<div class="controls">
+												<input id="start_time" name="startTime"type="datetime-local" onchange="handleChangeMetaData(event)">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">End date and time</label>
+											<div class="controls">
+												<input id="end_time" name="endTime" type="datetime-local" onchange="handleChangeMetaData(event)">
+											</div>
+										</div>
+										<div class="control-group">
+											<!-- <label class="control-label" for="basicinput">Question Data</label> -->
+											<div class="controls" id="questionNav">
+												
+											</div>
+											<div class="controls" id="questionNav2"></div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Question Data</label>
+											<div class="controls">
+												<textarea class="question_info" name="questionData" onchange="handleChangeQuestionField(event)"id="question_data" class="span8" rows="5"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="addMedia" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option A</label>
+											<div class="controls">
+												<textarea class="question_info" name="optA_data" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optA_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option B</label>
+											<div class="controls">
+												<textarea class="question_info" name="optB_data" onchange="handleChangeQuestionField(event)" id=optB_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optB_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option C</label>
+											<div class="controls">
+												<textarea class="question_info" name="optC_data" onchange="handleChangeQuestionField(event)" id=optC_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optC_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option D</label>
+											<div class="controls">
+												<textarea class="question_info" name="optD_data" onchange="handleChangeQuestionField(event)" id=optD_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optD_media" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Question Marks</label>
+											<div class="controls">
+												<div class="input-append">
+													 <input class="question_info" name="questionMarks" onchange="handleChangeQuestionField(event)" id=question_marks  type="number" placeholder="0" class="span6">
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label">Correct Answer</label>
+											<div class="controls">
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" >
+													A
+												</label> 
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option2" value="B">
+													B
+												</label> 
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="C">
+													C
+												</label>
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="D">
+													D
+												</label>
+											</div>
+										</div>
+										
+								<div class="control-group">
+											<div class="controls">
+												<button onclick="serverRequest(event)" type="submit" id="submitForm" class="btn">Submit Quiz</button>
+											</div>
+										</div>	
+										
+									</form>
+							</div>
+						</div>
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+	<script src="./script.js"></script>
+</body>
+</html>
+	

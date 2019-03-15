@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DASHBOARD</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./EditQuiz.js"></script>
+	<script src="./script.js"></script>
+</head>
+<body onload="callFetchQuizData()">
+
+<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+					<i class="icon-reorder shaded"></i>
+				</a>
+
+			  	<a class="brand" href="index.html">
+			  		DASHBOARD
+			  	</a>
+
+				<div class="nav-collapse collapse navbar-inverse-collapse">
+					<ul class="nav nav-icons">
+						<li class="active"><a href="#">
+							<i class="icon-envelope"></i>
+						</a></li>
+						<li><a href="#">
+							<i class="icon-eye-open"></i>
+						</a></li>
+						<li><a href="#">
+							<i class="icon-bar-chart"></i>
+						</a></li>
+					</ul>
+
+					<form class="navbar-search pull-left input-append" action="#">
+						<input type="text" class="span3">
+						<button class="btn" type="button">
+							<i class="icon-search"></i>
+						</button>
+					</form>
+				
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Item No. 1</a></li>
+								
+								<li><a href="#">Don't Click</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Example Header</li>
+								<li><a href="#">A Separated link</a></li>
+															</ul>
+						</li>
+						
+						<li><a href="#">
+							Support
+						</a></li>
+						<li class="nav-user dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/user.png" class="nav-avatar" />
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Your Profile</a></li>
+								<li><a href="#">Edit Profile</a></li>
+								<li><a href="#">Account Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->
+
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+
+						<ul class="widget widget-menu unstyled">
+							<li class="active">
+								<a href="CreateQuiz.html">
+									<i class="menu-icon icon-dashboard"></i>
+									Create Quiz
+								</a>
+							</li>
+							<li>
+								<a href="EditQuizList.html">
+									<i class="menu-icon icon-bullhorn"></i>
+									Edit Quiz
+								</a>
+							</li>
+							<li>
+								<a href="DeleteQuizList.html">
+									<i class="menu-icon icon-bullhorn"></i>
+									Delete Quiz
+								</a>
+							</li>
+							
+							<li>
+								<a href="Result.html">
+									<i class="menu-icon icon-bullhorn"></i>
+									Results
+								</a>
+							</li>
+						</ul><!--/.widget-nav-->
+
+						<ul class="widget widget-menu unstyled">
+                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
+                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Quiz </a></li>
+                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
+                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
+                            </ul><!--/.widget-nav-->
+
+						<ul class="widget widget-menu unstyled">
+							<li>
+								<a class="collapsed" data-toggle="collapse" href="#togglePages">
+									<i class="menu-icon icon-cog"></i>
+									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
+									More Pages
+								</a>
+								<ul id="togglePages" class="collapse unstyled">
+									<li>
+										<a href="other-login.html">
+											<i class="icon-inbox"></i>
+											Login
+										</a>
+									</li>
+									<li>
+										<a href="other-user-profile.html">
+											<i class="icon-inbox"></i>
+											Profile
+										</a>
+									</li>
+									<li>
+										<a href="other-user-listing.html">
+											<i class="icon-inbox"></i>
+											All Users
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">
+									<i class="menu-icon icon-signout"></i>
+									Logout
+								</a>
+							</li>
+						</ul>
+
+					</div><!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h2 >EDIT QUIZ</h2>
+							</div>
+							<div class="module-body">
+
+								<br/>
+
+									<form  method="POST" class="form-horizontal row-fluid">
+										<div class="control-group">
+											<label class="control-label" for="basicinput" >Quiz Name</label>
+											<div class="controls">
+												<textarea  onchange="handleChangeMetaData(event)"  name="quiz_name" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label">Class</label>
+											<div class="controls">
+												<label class="radio">
+													<input type="radio" name="class" id="options1" value="9" onchange="handleChangeMetaData(event)">
+													9th
+												</label> 
+												<label class="radio">
+													<input type="radio" name="class" id="option2" value="10" onchange="handleChangeMetaData(event)">
+													10th
+												</label> 
+												<label class="radio">
+													<input type="radio" name="class" id="option3" value="11" onchange="handleChangeMetaData(event)">
+													11th
+												</label>
+												<label class="radio">
+													<input type="radio" name="class" id="options3" value="12" >
+													12th
+												</label>
+											</div>
+										</div>								
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Number of Questions</label>
+											<div class="controls">
+												<div class="input-append">
+													<input id="numberOfQus" type="number" placeholder="0" class="span6" name="numberOfQuestions" onload="handleChangeMetaData(event)" onchange="handleChangeMetaData(event)"/>
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Quiz Description</label>
+											<div class="controls">
+												<textarea name="quiz_description"  onchange="handleChangeMetaData(event)" id="question_data" class="span12" rows="5"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Quiz Time</label>
+											<div class="controls">
+												<div class="input-append">
+													<input id="quiz_time" name="quizTime"  type="number" placeholder="0.0" onchange="handleChangeMetaData(event)" class="span8"><span class="add-on">in hrs</span>
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Start date and time</label>
+											<div class="controls">
+												<input id="start_time" name="startTime"type="datetime-local" onchange="handleChangeMetaData(event)">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">End date and time</label>
+											<div class="controls">
+												<input id="end_time" name="endTime" type="datetime-local" onchange="handleChangeMetaData(event)">
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="questionsLabel" class="control-label" for="basicinput"></label>
+											<div class="controls" id="questionNav">
+												
+											</div>
+											<div class="controls" id="questionNav2"></div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Question Data</label>
+											<div class="controls">
+												<textarea class="question_info" name="questionData" onchange="handleChangeQuestionField(event)"id="question_data" class="span8" rows="5"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="addMedia" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option A</label>
+											<div class="controls">
+												<textarea class="question_info" name="optA_data" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optA_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option B</label>
+											<div class="controls">
+												<textarea class="question_info" name="optB_data" onchange="handleChangeQuestionField(event)" id=optB_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optB_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option C</label>
+											<div class="controls">
+												<textarea class="question_info" name="optC_data" onchange="handleChangeQuestionField(event)" id=optC_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optC_media" onchange="handleChangeQuestionField(event)" class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Option D</label>
+											<div class="controls">
+												<textarea class="question_info" name="optD_data" onchange="handleChangeQuestionField(event)" id=optD_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Add Media</label>
+											<div class="controls">
+												<textarea class="question_info" name="optD_media" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Question Marks</label>
+											<div class="controls">
+												<div class="input-append">
+													 <input class="question_info" name="questionMarks" onchange="handleChangeQuestionField(event)" id=question_marks  type="number" placeholder="0" class="span6">
+												</div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label">Correct Answer</label>
+											<div class="controls">
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" >
+													A
+												</label> 
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option2" value="B">
+													B
+												</label> 
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="C">
+													C
+												</label>
+												<label class="radio">
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option3" value="D">
+													D
+												</label>
+											</div>
+										</div>
+										
+								<div class="control-group">
+											<div class="controls">
+												<button onclick="serverRequest(event)" type="submit" id="submitForm" class="btn">Submit Quiz</button>
+											</div>
+										</div>	
+										
+									</form>
+							</div>
+						</div>
+
+						
+						
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	
+
+	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
+</body>
