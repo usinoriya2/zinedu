@@ -5,7 +5,7 @@ function callFetchQuizData(){
 function getQuizData(i){
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/fetchQuizData",
+		url: "/fetchQuizData",
 	  type: "get", //send it through get method
 	  data: {
 	  			QuizID:i,

@@ -48,7 +48,7 @@ function getData(i){
 	console.log(i);
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/fetchQuizData",
+		url: "/fetchQuizData",
 	  type: "get", //send it through get method
 	  data: {
 	  	//QuizID: res["questions"][quiz_id]
@@ -190,7 +190,7 @@ handleSubmit =function(event){
     var string_data = JSON.stringify(quizIdObject);
     $.ajax({
     	 type: "post",
-		url: "http://localhost:8080/submitQuiz",
+		url: "/submitQuiz",
 	  data: string_data,
 	  success: my_function})}
 

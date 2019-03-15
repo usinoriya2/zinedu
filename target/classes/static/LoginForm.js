@@ -10,7 +10,7 @@ function postData(){
 	event.preventDefault();
     string_data = JSON.stringify(student);
     console.log(string_data);
-    $.post("http://localhost:8080/postStudentData",string_data).done(my_function);
+    $.post("/postStudentData",string_data).done(my_function);
 
 };
 function my_function(data){

@@ -8,7 +8,7 @@ function callQuizListData(){
 function getQuizListData(){
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/fetchEditQuizList",
+		url: "/fetchEditQuizList",
 	  type: "get", //send it through get method
 	  data: "check",
 	  success: function(response) {
@@ -24,7 +24,7 @@ function getQuizListData(){
 function getQuizDeleteListData(){
 	console.log("getQuizDeleteListData");
 	$.ajax({
-		url: "http://localhost:8080/fetchEditQuizList",
+		url: "/fetchEditQuizList",
 	  type: "get", //send it through get method
 	  data: "check",
 	  success: function(response) {
@@ -42,7 +42,7 @@ function loadQuizList2(i){
 
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/fetchQuizList",
+		url: "/fetchQuizList",
 	  type: "get", //send it through get method
 	  data: {
 	  	//QuizID: res["questions"][quiz_id]
@@ -94,7 +94,7 @@ function loadQuizDeleteList(editQuizList){
 function deleteQuiz(i){
 	//console.log("loadelete");
 	$.ajax({
-		url: "http://localhost:8080/deleteQuiz",
+		url: "/deleteQuiz",
 	  type: "get", //send it through get method
 	  data: {
 	  	//QuizID: res["questions"][quiz_id]
@@ -110,7 +110,7 @@ function deleteQuiz(i){
 	});	
 }
 function loadQuizDescription(quizId){
-	console.log("pickle rick");
+	//console.log("pickle rick");
 	localStorage.setItem("quiz_id", quizId);
 	window.location="QuizDescription.html";
 }

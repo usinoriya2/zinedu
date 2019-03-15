@@ -2,7 +2,7 @@ var resultList=[];
 function getResultListData(){
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/fetchResultList",
+		url: "/fetchResultList",
 	  type: "get", //send it through get method
 	  data: "check",
 	  success: function(response) {
@@ -32,7 +32,7 @@ function showResultList(resultList){
 function getResultData(i){
 	console.log("load");
 	$.ajax({
-		url: "http://localhost:8080/getCsv",
+		url: "/getCsv",
 	  type: "get", //send it through get method
 	  data: {
 	  	//QuizID: res["questions"][quiz_id]
