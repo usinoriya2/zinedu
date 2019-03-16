@@ -122,6 +122,7 @@ public class Controller {
                 resultList.quiz_name=resultSet.getString(1);
             }
             int resultListId = insertResultList(resultList);
+            System.out.println("Added Result");
             insertResult(jsonObject.get("attempted_answers").getAsJsonObject(),jsonObject.get("quiz_id").getAsString(),resultListId);
         } catch (Exception e) {
             e.printStackTrace();
@@ -424,11 +425,14 @@ public class Controller {
     public String fetchResultList(){
         ArrayList<ResultList> resultListArray=new ArrayList<>();
         String json=new String();
+        int i=0;
         try{
             Connection con = connector();
             Statement statement = con.createStatement();
             ResultSet rs= statement.executeQuery("select * from result_list");
             while(rs.next()){
+                if(i%2==0){continue;}
+                i++;
                 ResultList resultList =new ResultList();
                 resultList.result_list_id = rs.getInt(1);
                 resultList.quiz_id= rs.getInt(2);
