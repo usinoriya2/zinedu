@@ -135,6 +135,7 @@ function handleSwitchQuestion(i){
       console.log(" Inside function");
       my_function(result);
     });
+    console.log("After");
  };
   function my_function(data){
     console.log("Request accepted");
