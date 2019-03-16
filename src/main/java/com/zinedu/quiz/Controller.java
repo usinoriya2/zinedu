@@ -55,6 +55,7 @@ public class Controller {
         JsonElement jsonElement = new JsonParser().parse(decoded.substring(0,decoded.length()-1));
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         System.out.println(jsonObject);
+        System.out.println("Adding Data");
         JsonArray quizQuestions = jsonObject.getAsJsonArray("quizQuestions");
         JsonObject quizMetaData = jsonObject.getAsJsonObject("quizMetaData");
         quiz.quiz_name = quizMetaData.getAsJsonPrimitive("quiz_name").getAsString();
@@ -93,6 +94,7 @@ public class Controller {
             insetQuizQuestionTable(quiz_id,question_id);}
         }
 
+        System.out.println("Data added");
         return "";
     }
     @RequestMapping(value = "/submitQuiz" , method = RequestMethod.POST)
