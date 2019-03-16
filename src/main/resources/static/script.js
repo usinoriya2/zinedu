@@ -131,10 +131,10 @@ function handleSwitchQuestion(i){
     console.log(quizDetails);
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
-    $.post("/az",string_data).done(my_function);
+    $.post("http://localhost:8080/az",string_data).done(my_function);
  };
   function my_function(data){
-    window.location("QuizSuccessfullySubmitted.html");
+    window.location="QuizSuccessfullySubmitted.html";
   }
 addClassToQuestion = function(quesId, className, shouldRemove){  
   var elements = document.getElementById("quesButton" + (quesId + 1));
