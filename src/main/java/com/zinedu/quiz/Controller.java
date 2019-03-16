@@ -431,17 +431,18 @@ public class Controller {
             Statement statement = con.createStatement();
             ResultSet rs= statement.executeQuery("select * from result_list");
             while(rs.next()){
-                if(i%2==0){continue;}
+                if(i%2==0) {
+                    ResultList resultList = new ResultList();
+                    resultList.result_list_id = rs.getInt(1);
+                    resultList.quiz_id = rs.getInt(2);
+                    resultList.student_name = rs.getString(3);
+                    resultList.class_id = rs.getInt(4);
+                    resultList.school_name = rs.getString(5);
+                    resultList.roll_no = rs.getInt(6);
+                    resultList.quiz_name = rs.getString(7);
+                    resultListArray.add(resultList);
+                }
                 i++;
-                ResultList resultList =new ResultList();
-                resultList.result_list_id = rs.getInt(1);
-                resultList.quiz_id= rs.getInt(2);
-                resultList.student_name = rs.getString(3);
-                resultList.class_id = rs.getInt(4);
-                resultList.school_name=rs.getString(5);
-                resultList.roll_no=rs.getInt(6);
-                resultList.quiz_name=rs.getString(7);
-                resultListArray.add(resultList);
             }
             json = new Gson().toJson(resultListArray);
         }
