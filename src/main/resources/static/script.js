@@ -134,7 +134,7 @@ function handleSwitchQuestion(i){
     $.post("/az",string_data).done(my_function);
  };
   function my_function(data){
-    console.log(data);
+    window.location("QuizSuccessfullySubmitted.html");
   }
 addClassToQuestion = function(quesId, className, shouldRemove){  
   var elements = document.getElementById("quesButton" + (quesId + 1));
