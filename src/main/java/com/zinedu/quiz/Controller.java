@@ -425,11 +425,14 @@ public class Controller {
     public String fetchResultList(){
         ArrayList<ResultList> resultListArray=new ArrayList<>();
         String json=new String();
+        int i=0;
         try{
             Connection con = connector();
             Statement statement = con.createStatement();
             ResultSet rs= statement.executeQuery("select * from result_list");
             while(rs.next()){
+                if(i%2==0){continue;}
+                i++;
                 ResultList resultList =new ResultList();
                 resultList.result_list_id = rs.getInt(1);
                 resultList.quiz_id= rs.getInt(2);
