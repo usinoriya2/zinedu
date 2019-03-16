@@ -182,14 +182,14 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput" >Quiz Name</label>
 											<div class="controls">
-												<textarea  onchange="handleChangeMetaData(event)"  name="quiz_name" id=optA_data class="span8" rows="1"></textarea>
+												<textarea  onchange="handleChangeMetaData(event)"  name="quiz_name" id=optA_data class="span8" rows="1" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label">Class</label>
 											<div class="controls">
 												<label class="radio">
-													<input type="radio" name="class" id="options1" value="9" onchange="handleChangeMetaData(event)">
+													<input type="radio" name="class" id="options1" value="9" onchange="handleChangeMetaData(event)" required>
 													9th
 												</label> 
 												<label class="radio">
@@ -201,7 +201,7 @@
 													11th
 												</label>
 												<label class="radio">
-													<input type="radio" name="class" id="options3" value="12" >
+													<input type="radio" name="class" id="options3" value="12" onchange="handleChangeMetaData(event)">
 													12th
 												</label>
 											</div>
@@ -210,34 +210,35 @@
 											<label class="control-label" for="basicinput">Number of Questions</label>
 											<div class="controls">
 												<div class="input-append">
-													<input id="numberOfQus" type="number" placeholder="0" class="span6" name="numberOfQuestions" onchange="handleChangeMetaData(event)"/>
+													<input id="numberOfQus" type="number" placeholder="0" class="span6" name="numberOfQuestions" onchange="handleChangeMetaData(event)"
+													required />
 												</div>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Quiz Description</label>
 											<div class="controls">
-												<textarea name="quiz_description"  onchange="handleChangeMetaData(event)" id="question_data" class="span12" rows="5"></textarea>
+												<textarea name="quiz_description"  onchange="handleChangeMetaData(event)" id="question_data" class="span12" rows="5" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Quiz Time</label>
 											<div class="controls">
 												<div class="input-append">
-													<input id="quiz_time" name="quizTime"  type="number" placeholder="0.0" onchange="handleChangeMetaData(event)" class="span8"><span class="add-on">in hrs</span>
+													<input id="quiz_time" name="quizTime"  type="number" placeholder="0.0" onchange="handleChangeMetaData(event)" class="span8" required><span class="add-on">in hrs</span>
 												</div>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Start date and time</label>
 											<div class="controls">
-												<input id="start_time" name="startTime"type="datetime-local" onchange="handleChangeMetaData(event)">
+												<input id="start_time" name="startTime"type="datetime-local" onchange="handleChangeMetaData(event)" required>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">End date and time</label>
 											<div class="controls">
-												<input id="end_time" name="endTime" type="datetime-local" onchange="handleChangeMetaData(event)">
+												<input id="end_time" name="endTime" type="datetime-local" onchange="handleChangeMetaData(event)" required>
 											</div>
 										</div>
 										<div class="control-group">
@@ -250,7 +251,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Question Data</label>
 											<div class="controls">
-												<textarea class="question_info" name="questionData" onchange="handleChangeQuestionField(event)"id="question_data" class="span8" rows="5"></textarea>
+												<textarea class="question_info" name="questionData" onchange="handleChangeQuestionField(event)"id="question_data" class="span8" rows="5" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -262,7 +263,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Option A</label>
 											<div class="controls">
-												<textarea class="question_info" name="optA_data" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1"></textarea>
+												<textarea class="question_info" name="optA_data" onchange="handleChangeQuestionField(event)" id=optA_data class="span8" rows="1" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -274,7 +275,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Option B</label>
 											<div class="controls">
-												<textarea class="question_info" name="optB_data" onchange="handleChangeQuestionField(event)" id=optB_data class="span8" rows="1"></textarea>
+												<textarea class="question_info" name="optB_data" onchange="handleChangeQuestionField(event)" id=optB_data class="span8" rows="1" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -286,7 +287,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Option C</label>
 											<div class="controls">
-												<textarea class="question_info" name="optC_data" onchange="handleChangeQuestionField(event)" id=optC_data class="span8" rows="1"></textarea>
+												<textarea class="question_info" name="optC_data" onchange="handleChangeQuestionField(event)" id=optC_data class="span8" rows="1" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -298,7 +299,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Option D</label>
 											<div class="controls">
-												<textarea class="question_info" name="optD_data" onchange="handleChangeQuestionField(event)" id=optD_data class="span8" rows="1"></textarea>
+												<textarea class="question_info" name="optD_data" onchange="handleChangeQuestionField(event)" id=optD_data class="span8" rows="1" required></textarea>
 											</div>
 										</div>
 										<div class="control-group">
@@ -311,7 +312,7 @@
 											<label class="control-label" for="basicinput">Question Marks</label>
 											<div class="controls">
 												<div class="input-append">
-													 <input class="question_info" name="questionMarks" onchange="handleChangeQuestionField(event)" id=question_marks  type="number" placeholder="0" class="span6">
+													 <input class="question_info" name="questionMarks" onchange="handleChangeQuestionField(event)" id=question_marks  type="number" placeholder="0" class="span6" required>
 												</div>
 											</div>
 										</div>
@@ -319,7 +320,7 @@
 											<label class="control-label">Correct Answer</label>
 											<div class="controls">
 												<label class="radio">
-													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" >
+													<input class="question_info" type="radio" name="correctAns" onchange="handleChangeQuestionField(event)" id="option1" value="A" required>
 													A
 												</label> 
 												<label class="radio">

@@ -142,6 +142,8 @@ addClassToQuestion = function(quesId, className, shouldRemove){
   if(shouldRemove) elements.classList.remove(className);
   else elements.classList.add(className);
 }
-
+ function backToDashboard(){
+  window.location="CreateQuiz.html";
+ }
 
 

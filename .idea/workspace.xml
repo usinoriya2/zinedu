@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc0c4bd3-3b48-4eca-aae9-bbf0dcecc149" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/EditQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/EditQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/Result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/displayQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/displayQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/EditQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/EditQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/Result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/displayQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/displayQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/quiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CreateQuiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CreateQuiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,10 +39,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="116">
+              <caret line="401" column="31" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -237,8 +229,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="-14" />
+    <option name="y" value="133" />
     <option name="width" value="1346" />
     <option name="height" value="728" />
   </component>
@@ -302,7 +294,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552643022610" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552743413353" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -369,12 +361,12 @@
       <workItem from="1552160346129" duration="7317000" />
       <workItem from="1552208622081" duration="8950000" />
       <workItem from="1552595427204" duration="920000" />
-      <workItem from="1552603622090" duration="5048000" />
+      <workItem from="1552603622090" duration="11800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211088000" />
+    <option name="totallyTimeSpent" value="217840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -768,10 +760,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zinedu/quiz/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="116">
+          <caret line="401" column="31" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
           </folding>
         </state>
       </provider>
