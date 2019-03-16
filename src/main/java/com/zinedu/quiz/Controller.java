@@ -22,7 +22,7 @@ public class Controller {
     public Connection connector() throws Exception {
 //        System.out.println("connecting to db");
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/mydatabse?useSSL=false", "root", "aaaa");
+                "jdbc:mysql://localhost:3306/zinedu?useSSL=false", "root", "aaaa");
         return con;
     }
 
