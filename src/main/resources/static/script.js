@@ -131,7 +131,9 @@ function handleSwitchQuestion(i){
     console.log(quizDetails);
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
-    $.post("http://localhost:8080/az",string_data).done(my_function);
+    $.post("/az",string_data,function(result){
+      my_function(result);
+    });
  };
   function my_function(data){
     console.log("Request accepted");
