@@ -132,6 +132,7 @@ function handleSwitchQuestion(i){
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
     $.post("/az",string_data,function(result){
+      console.log(" Inside function");
       my_function(result);
     });
  };
