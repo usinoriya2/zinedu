@@ -122,6 +122,7 @@ public class Controller {
                 resultList.quiz_name=resultSet.getString(1);
             }
             int resultListId = insertResultList(resultList);
+            System.out.println("Added Result");
             insertResult(jsonObject.get("attempted_answers").getAsJsonObject(),jsonObject.get("quiz_id").getAsString(),resultListId);
         } catch (Exception e) {
             e.printStackTrace();
