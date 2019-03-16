@@ -131,10 +131,15 @@ function handleSwitchQuestion(i){
     console.log(quizDetails);
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
-    $.post("http://localhost:8080/az",string_data).done(my_function);
+    $.post("/az",string_data,function(result){
+      console.log(" Inside function");
+      my_function(result);
+    });
+    console.log("After");
  };
   function my_function(data){
-    console.log(data);
+    console.log("Request accepted");
+    window.location="QuizSuccessfullySubmitted.html";
   }
 addClassToQuestion = function(quesId, className, shouldRemove){  
   var elements = document.getElementById("quesButton" + (quesId + 1));
@@ -142,6 +147,8 @@ addClassToQuestion = function(quesId, className, shouldRemove){
   if(shouldRemove) elements.classList.remove(className);
   else elements.classList.add(className);
 }
-
+ function backToDashboard(){
+  window.location="CreateQuiz.html";
+ }
 
 
