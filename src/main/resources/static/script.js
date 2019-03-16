@@ -131,7 +131,7 @@ function handleSwitchQuestion(i){
     console.log(quizDetails);
     string_data = JSON.stringify(quizDetails);
     console.log(string_data);
-    $.post("148.72.212.104:8080/az",string_data,function(result){
+    $.post("/az",string_data,function(result){
       console.log(" Inside function");
       my_function(result);
     });
