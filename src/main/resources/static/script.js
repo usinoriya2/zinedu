@@ -134,6 +134,7 @@ function handleSwitchQuestion(i){
     $.post("http://localhost:8080/az",string_data).done(my_function);
  };
   function my_function(data){
+    console.log("Request accepted");
     window.location="QuizSuccessfullySubmitted.html";
   }
 addClassToQuestion = function(quesId, className, shouldRemove){  
